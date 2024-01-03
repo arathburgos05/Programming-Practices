@@ -1,0 +1,149 @@
+{
+    "folders": [
+        {
+            "path": "."
+        }
+    ],
+    "settings": {
+        // Graphical editor - Settings
+        "terminal.integrated.cwd": "${workspaceFolder}",
+        "debug.toolBarLocation": "commandCenter",
+        "editor.stickyScroll.defaultModel": "foldingProviderModel",
+        "editor.stickyScroll.maxLineCount": 5,
+        "editor.stickyScroll.enabled": true,
+        "outline.icons": true,
+        "diffEditor.ignoreTrimWhitespace": false,
+        "powershell.integratedConsole.forceClearScrollbackBuffer": true,
+        "workbench.editor.labelFormat": "short",
+        "window.zoomLevel": -0.02,
+        "editor.fontSize": 13,
+        "editor.minimap.maxColumn": 100,
+        "editor.minimap.autohide": true,
+        "editor.minimap.renderCharacters": true,
+        "editor.minimap.showSlider": "always",
+        "editor.minimap.size": "fill",
+        "editor.scrollbar.vertical": "visible",
+        "window.titleSeparator": " 🔷 ",
+        "window.title": "${dirty}${folderName}${separator}${rootName}",
+        "terminal.integrated.tabs.description": "${task}${separator}${local}${separator}${cwdFolder}",
+        "terminal.integrated.tabs.title": "${process}${separator}${activeEditorShort}",
+        "editor.gotoLocation.multipleDefinitions": "peek",
+        "workbench.editor.wrapTabs": true,
+        // "workbench.editor.",
+        "editor.tabCompletion": "on",
+        "workbench.editor.tabSizing": "fit",
+        "workbench.editor.tabActionCloseVisibility": false,
+        "workbench.editor.pinnedTabSizing": "compact",
+        // Optimizations - Settings
+        "debug.allowBreakpointsEverywhere": true,
+        "terminal.integrated.enableImages": false,
+        "terminal.integrated.gpuAcceleration": "auto",
+        "terminal.integrated.enablePersistentSessions": false,
+        "terminal.integrated.persistentSessionReviveProcess": "never",
+        "editor.indentSize": 2,
+        "terminal.integrated.tabs.enabled": true,
+        "terminal.integrated.scrollback": 1000000,
+        "task.quickOpen.skip": false,
+        "task.quickOpen.history": 1,
+        "task.autoDetect": "off",
+        "task.quickOpen.showAll": false,
+        "task.saveBeforeRun": "never",
+        "search.quickOpen.includeHistory": true,
+        "search.useIgnoreFiles": false,
+        "typescript.tsc.autoDetect": "off",
+        "cmake.autoDetect": "off",
+        "grunt.autoDetect": "off",
+        "jake.autoDetect": "off",
+        "gulp.autoDetect": "off",
+        "npm.autoDetect": "off"
+    },
+    "tasks": {
+        "version": "2.0.0",
+        "windows": {
+            "options": {
+                "shell": {
+                    "executable": "cmd.exe",
+                    "args": [
+                        "/d",
+                        "/c"
+                    ]
+                }
+            }
+        },
+        "tasks": [
+            {
+                "hide": true,
+                "label": "[Plugin] Make CleanPlugin + Compile + Install (WRAPPED)", /* TODO: Auto post call to link plugin with repo but automatically. (then remove this workaround) */
+                "group": {
+                    "kind": "build",
+                    "isDefault": false
+                },
+                "type": "shell",
+                "command": "@echo off & cls & call PowerShell -NoProfile -ExecutionPolicy RemoteSigned -File \"C:\\Burgos Software\\ElektrobitToolsHelper\\Scripts\\CoreEbScript.ps1\" -Plugin_MixedCmds CleanPlugin+Compile+Install -CurrentPath \"${input:pluginRepoSelection}\"",
+                "presentation": {
+                    "echo": true,
+                    "clear": true,
+                    "reveal": "always",
+                    "revealProblems": "never",
+                    "close": false,
+                    "panel": "dedicated",
+                    "showReuseMessage": false,
+                    "focus": true
+                },
+                "problemMatcher": [],
+                "icon": {
+                    "id": "extensions",
+                    "color": "terminal.ansiYellow"
+                }
+            }
+        ],
+        "inputs": [
+        ]
+    },
+    "launch": {
+        "version": "0.2.0",
+        "configurations": [
+            // {
+            //     "name": "EB Plugins tests debugging",
+            //     "type": "cppdbg",
+            //     "request": "launch",
+            //     "miDebuggerPath": "${workspaceFolder:plugins}\\Platforms_TS_T19D1M4I0R0\\tools\\mingw-gcc-6.2.0\\bin\\gdb.exe",
+            //     "program": "${fileDirname}\\..\\..\\output\\bin\\WINDOWS_WIN32X86_${command:extension.commandvariable.file.fileDirBasename2Up}.exe",
+            //     "args": [],
+            //     "cwd": "${fileDirname}\\..\\..\\output\\bin",
+            //     "MIMode": "gdb",
+            //     "externalConsole": false,
+            //     "avoidWindowsConsoleRedirection": true,
+            //     "internalConsoleOptions": "openOnSessionStart",
+            //     "stopAtEntry": false,
+            //     "targetArchitecture": "x64",
+            //     "setupCommands": [
+            //         {
+            //             "description": "Enable pretty-printing for gdb",
+            //             "text": "-enable-pretty-printing",
+            //             "ignoreFailures": false
+            //         },
+            //         // {
+            //         //     "description": "Disable multi-threads steps 1",
+            //         //     "text": "set pagination off",
+            //         //     "ignoreFailures": false
+            //         // },
+            //         // {
+            //         //     "description": "Disable multi-threads steps 1",
+            //         //     "text": "set scheduler-locking step",
+            //         //     "ignoreFailures": false
+            //         // },
+            //     ],
+            //     "environment": [
+            //         {
+            //             "name": "TS5ATL_PRINTRESULT",
+            //             "value": "1"
+            //         }
+            //     ],
+            //     // "preLaunchTask": {
+            //     //     "task": "[test_base] Make Compile + Run"
+            //     // }
+            // }
+        ]
+    }
+}

@@ -1,0 +1,18 @@
+{
+  "configurations": [
+    {
+      "name": "windows-gcc-x64",
+      "includePath": [
+        "${workspaceFolder}/**"
+      ],
+      "compilerPath": "D:/Projectspace/Projects/Crypto_Prd_Jaspar_2.0_ACG-8.8.8_698030/Tresos/plugins/Platforms_TS_T19D1M4I0R0/tools/mingw-gcc-6.2.0/bin/gcc.exe",
+      "cStandard": "${default}",
+      "cppStandard": "${default}",
+      "intelliSenseMode": "windows-gcc-x64",
+      "compilerArgs": [
+        ""
+      ]
+    }
+  ],
+  "version": 4
+}
